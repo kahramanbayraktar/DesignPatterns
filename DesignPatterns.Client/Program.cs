@@ -1,6 +1,6 @@
 ﻿using DesignPatterns.Behavioral.Iterator;
 using DesignPatterns.Behavioral.Memento;
-using DesignPatterns.Behavioral.Observer;
+using DesignPatterns.Behavioral.Observer.Example1;
 using DesignPatterns.Behavioral.State;
 using DesignPatterns.Behavioral.Strategy;
 using DesignPatterns.Creational.Factory.Example1;
