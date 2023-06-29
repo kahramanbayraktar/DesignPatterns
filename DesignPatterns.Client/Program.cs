@@ -3,8 +3,7 @@ using DesignPatterns.Behavioral.Memento;
 using DesignPatterns.Behavioral.Observer;
 using DesignPatterns.Behavioral.State;
 using DesignPatterns.Behavioral.Strategy;
-using DesignPatterns.State;
-using DesignPatterns.Strategy;
+using DesignPatterns.Creational.Factory.Example1;
 
 namespace DesignPatterns.Client
 {
@@ -16,7 +15,8 @@ namespace DesignPatterns.Client
             //State();
             //Iterator();
             //Strategy();
-            Observer();
+            //Observer();
+            Factory();
         }
 
         private static void Memento()
@@ -94,6 +94,17 @@ namespace DesignPatterns.Client
             dataSource.AddObserver(chart);
 
             dataSource.Value = 3;
+        }
+
+        private static void Factory()
+        {
+            Creator creator1 = new ConcreteCreator1();
+            IProduct product1 = creator1.CreateProduct();
+            product1.SomeOperation();
+
+            Creator creator2 = new ConcreteCreator2();
+            var product2 = creator2.CreateProduct();
+            product2.SomeOperation();
         }
     }
 }
