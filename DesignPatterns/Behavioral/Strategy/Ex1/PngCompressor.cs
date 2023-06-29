@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Behavioral.Strategy
+﻿namespace DesignPatterns.Behavioral.Strategy.Ex1
 {
     public class PngCompressor : ICompressor
     {

@@ -4,6 +4,7 @@ using DesignPatterns.Behavioral.Observer.Ex2;
 using DesignPatterns.Behavioral.Observer.Example1;
 using DesignPatterns.Behavioral.State;
 using DesignPatterns.Behavioral.Strategy;
+using DesignPatterns.Behavioral.Strategy.Ex1;
 using DesignPatterns.Creational.Factory.Example1;
 
 namespace DesignPatterns.Client
@@ -15,9 +16,9 @@ namespace DesignPatterns.Client
             //Memento();
             //State();
             //Iterator();
-            //Strategy();
+            Strategy();
             //Observer();
-            Factory();
+            //Factory();
         }
 
         private static void Memento()
