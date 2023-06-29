@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Memento
+﻿namespace DesignPatterns.Behavioral.Memento
 {
     public class Editor
     {
@@ -10,7 +10,7 @@
         }
 
         public void Restore(EditorState state)
-        { 
+        {
             Content = state.Content;
         }
     }

@@ -1,5 +1,8 @@
-﻿using DesignPatterns.Iterator;
-using DesignPatterns.Memento;
+﻿using DesignPatterns.Behavioral.Iterator;
+using DesignPatterns.Behavioral.Memento;
+using DesignPatterns.Behavioral.Observer;
+using DesignPatterns.Behavioral.State;
+using DesignPatterns.Behavioral.Strategy;
 using DesignPatterns.State;
 using DesignPatterns.Strategy;
 
@@ -12,7 +15,8 @@ namespace DesignPatterns.Client
             //Memento();
             //State();
             //Iterator();
-            Strategy();
+            //Strategy();
+            Observer();
         }
 
         private static void Memento()
@@ -76,6 +80,20 @@ namespace DesignPatterns.Client
             imageStorage.Store("fileName", new JpegCompressor(), new BlackAndWhiteFilter());
             imageStorage.Store("fileName", new PngCompressor(), new BlackAndWhiteFilter());
             imageStorage.Store("fileName", new PngCompressor(), new ContrastFilter());
+        }
+
+        private static void Observer()
+        {
+            DataSource dataSource = new();
+            SpreadSheet sheet = new();
+            SpreadSheet sheet2 = new();
+            Chart chart = new();
+
+            dataSource.AddObserver(sheet);
+            dataSource.AddObserver(sheet2);
+            dataSource.AddObserver(chart);
+
+            dataSource.Value = 3;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Strategy
+﻿namespace DesignPatterns.Behavioral.Strategy
 {
     public class BlackAndWhiteFilter : IFilter
     {

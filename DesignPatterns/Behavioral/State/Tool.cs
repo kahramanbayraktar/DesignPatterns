@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.State
+﻿namespace DesignPatterns.Behavioral.State
 {
     // This class follows the Open Closed Principle (OCP) of SOLID.
     public interface Tool

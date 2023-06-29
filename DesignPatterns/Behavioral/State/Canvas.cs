@@ -1,11 +1,11 @@
-﻿namespace DesignPatterns.State
+﻿namespace DesignPatterns.Behavioral.State
 {
     public class Canvas
     {
         public Tool Tool { get; set; }
 
         public void MouseDown()
-        { 
+        {
             Tool.MouseDown();
         }
 

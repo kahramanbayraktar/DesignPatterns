@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Iterator
+﻿namespace DesignPatterns.Behavioral.Iterator
 {
     public class BrowseHistory
     {

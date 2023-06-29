@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Memento
+﻿namespace DesignPatterns.Behavioral.Memento
 {
     public class EditorState
     {
