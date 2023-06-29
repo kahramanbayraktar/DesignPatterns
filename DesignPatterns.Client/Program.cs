@@ -1,5 +1,6 @@
 ﻿using DesignPatterns.Behavioral.Iterator;
 using DesignPatterns.Behavioral.Memento;
+using DesignPatterns.Behavioral.Observer.Ex2;
 using DesignPatterns.Behavioral.Observer.Example1;
 using DesignPatterns.Behavioral.State;
 using DesignPatterns.Behavioral.Strategy;
@@ -94,6 +95,13 @@ namespace DesignPatterns.Client
             dataSource.AddObserver(chart);
 
             dataSource.Value = 3;
+        }
+
+        private static void Observer2()
+        {
+            var path = "/path/to/log.txt";
+            Behavioral.Observer.Ex2.Editor editor = new();
+            editor.Events.Subscribe(new LoggingListener("path", "Someone has opened the file: " + path));
         }
 
         private static void Factory()
