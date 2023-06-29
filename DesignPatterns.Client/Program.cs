@@ -6,6 +6,7 @@ using DesignPatterns.Behavioral.State;
 using DesignPatterns.Behavioral.Strategy.Ex1;
 using DesignPatterns.Behavioral.Strategy.Ex2;
 using DesignPatterns.Creational.Factory.Example1;
+using DesignPatterns.Structural.Adapter.Ex1;
 
 namespace DesignPatterns.Client
 {
@@ -19,6 +20,7 @@ namespace DesignPatterns.Client
             Strategy();
             //Observer();
             //Factory();
+            Adapter();
         }
 
         private static void Memento()
@@ -123,6 +125,23 @@ namespace DesignPatterns.Client
             Creator creator2 = new ConcreteCreator2();
             var product2 = creator2.CreateProduct();
             product2.SomeOperation();
+        }
+
+        private static void Adapter()
+        {
+            RoundHole hole = new(5);
+            RoundPeg roundPeg = new(5);
+            var fits = hole.Fits(roundPeg);
+
+            SquarePeg squarePeg = new(5);
+            //hole.Fits(squarePeg); // compile time error
+
+            SquarePegAdapter adapter = new(squarePeg.Width);
+            hole.Fits(adapter);
+
+            SquarePeg squarePeg2 = new(10);
+            SquarePegAdapter adapter2 = new(squarePeg.Width);
+            hole.Fits(adapter2);
         }
     }
 }
