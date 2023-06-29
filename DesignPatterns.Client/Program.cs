@@ -3,8 +3,8 @@ using DesignPatterns.Behavioral.Memento;
 using DesignPatterns.Behavioral.Observer.Ex2;
 using DesignPatterns.Behavioral.Observer.Example1;
 using DesignPatterns.Behavioral.State;
-using DesignPatterns.Behavioral.Strategy;
 using DesignPatterns.Behavioral.Strategy.Ex1;
+using DesignPatterns.Behavioral.Strategy.Ex2;
 using DesignPatterns.Creational.Factory.Example1;
 
 namespace DesignPatterns.Client
@@ -23,7 +23,7 @@ namespace DesignPatterns.Client
 
         private static void Memento()
         {
-            Editor editor = new();
+            Behavioral.Memento.Editor editor = new();
             History history = new();
 
             editor.Content = "a";
@@ -82,6 +82,15 @@ namespace DesignPatterns.Client
             imageStorage.Store("fileName", new JpegCompressor(), new BlackAndWhiteFilter());
             imageStorage.Store("fileName", new PngCompressor(), new BlackAndWhiteFilter());
             imageStorage.Store("fileName", new PngCompressor(), new ContrastFilter());
+        }
+
+        private static void Strategy2()
+        {
+            Context context = new(new StrategyAdd());
+            var result = context.ExecuteStrategy(1, 3); // 4
+
+            context.Strategy = new StrategyMultiply();
+            result = context.ExecuteStrategy(1, 3); // 3
         }
 
         private static void Observer()

@@ -17,7 +17,7 @@
         public void Notify(Type eventType, string message)
         {
             foreach (var listener in from listener in _listeners
-                                     where listener is eventType
+                                     where listener.GetType() == eventType
                                      select listener)
             {
                 listener.Update(message);
